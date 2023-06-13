@@ -1,0 +1,3 @@
+include ':dniedroid-release'
+rootProject.name='PilotoMiMurcia'
+include ':app'

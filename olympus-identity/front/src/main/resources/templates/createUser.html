@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Admin page</title>
+  <link th:href="@{/css/login.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+  <div class="inner_container">
+    <div class="img_container" th:style="'background:url(/image/line-resized.jpg)'"></div>
+    <div class="box">
+      <div class="title_container">
+        <label class="title">Create account</label>
+      </div>
+      <div class="error_container" th:if="${userExists}">
+        <label class="error">That account name already exists.</label>
+      </div>
+      <div class="error_container" th:if="${unknownError}">
+        <div class="error">Something went wrong. Please try again.</div>
+      </div>
+      <br/>
+      <p th:if="${userCreationError}" class="error">Something went wrong</p>
+      <div class="form_container">
+        <form th:action="@{/createUser}" method="post"
+              th:object="${createUserRequest}">
+
+          <div class="label_container">
+            <label class="label" for="firstName">First Name</label>
+          </div>
+          <input type="text" id="firstName" name="firstName" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{firstName}"/> <br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('firstName')}"
+                th:errors="*{firstName}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="lastName">Last Name</label>
+          </div>
+          <input type="text" id="lastName" name="lastName" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{lastName}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('lastName')}"
+                th:errors="*{lastName}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="birthdate">Birth date</label>
+          </div>
+          <input type="date" id="birthdate" name="birthdate" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{birthdate}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('birthdate')}"
+                th:errors="*{birthdate}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="email">Email</label>
+          </div>
+          <input type="email" id="email" name="email" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{email}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('lastName')}"
+                th:errors="*{email}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="vaccinationdate">Vaccionation date</label>
+          </div>
+          <input type="date" id="vaccinationdate" name="vaccinationdate" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{vaccinationdate}"/><br/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('vaccinationdate')}"
+                th:errors="*{vaccinationdate}"></span>
+          </div>
+
+          <br/>
+          <br/>
+
+          <div class="label_container">
+            <label class="label" for="username">Username</label>
+          </div>
+          <input type="text" id="username" name="username" class="form-control"
+                 autofocus="autofocus"
+                 th:field="*{username}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('username')}"
+                th:errors="*{username}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="password">Password</label>
+          </div>
+          <input type="password" id="password" name="password" class="form-control"
+                 autocomplete="off"
+                 th:field="*{password}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}"></span>
+          </div>
+
+          <div class="label_container">
+            <label class="label" for="password">Confirm password</label>
+          </div>
+          <input type="password" id="password_check" name="password" class="form-control"
+                 autocomplete="off"
+                 th:field="*{passwordCheck}"/>
+          <div class="error_container">
+          <span class="error" th:if="${#fields.hasErrors('passwordsEqual')}"
+                th:errors="*{passwordsEqual}"></span>
+          </div>
+
+          <br/>
+          <br/>
+
+          <div class="button_container">
+            <input class="button" type="submit" value="Sign up"/>
+          </div>
+        </form>
+
+        <div class="link_container">
+          <label class="sub_label">
+            Already have an account?
+          </label>
+          <a th:href="@{/loginPage}" class="sub_label">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

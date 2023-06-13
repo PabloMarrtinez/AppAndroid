@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="@raw/server_cert"/>
+            <certificates src="@raw/server0_cert"/>
+            <certificates src="@raw/server1_cert"/>
+            <certificates src="@raw/server2_cert"/>
+            <certificates src="@raw/capman_cert"/>
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

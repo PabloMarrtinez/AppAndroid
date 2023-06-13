@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpSettings">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/editTextPostalCode"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPostalCode" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/addressString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextAddress"
+            app:layout_constraintEnd_toStartOf="@+id/editTextAddress"
+            app:layout_constraintTop_toTopOf="@+id/editTextAddress" />
+
+        <EditText
+            android:id="@+id/editTextPostalCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/editTextCity"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCity" />
+
+        <TextView
+            android:id="@+id/postalCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/postalCodeString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextPostalCode"
+            app:layout_constraintEnd_toStartOf="@+id/editTextPostalCode"
+            app:layout_constraintTop_toTopOf="@+id/editTextPostalCode" />
+
+        <EditText
+            android:id="@+id/editTextCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/editTextProvince"
+            app:layout_constraintTop_toBottomOf="@+id/editTextProvince" />
+
+        <TextView
+            android:id="@+id/cityTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/cityString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCity"
+            app:layout_constraintEnd_toStartOf="@+id/editTextCity"
+            app:layout_constraintTop_toTopOf="@+id/editTextCity" />
+
+        <TextView
+            android:id="@+id/settingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@string/addressTitleString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/settingsTitleString" />
+
+        <EditText
+            android:id="@+id/editTextCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settingsTitle" />
+
+        <TextView
+            android:id="@+id/countryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/countryString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCountry"
+            app:layout_constraintEnd_toStartOf="@+id/editTextCountry"
+            app:layout_constraintTop_toTopOf="@+id/editTextCountry" />
+
+        <TextView
+            android:id="@+id/provinceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/provinceString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextProvince"
+            app:layout_constraintEnd_toStartOf="@+id/editTextProvince"
+            app:layout_constraintTop_toTopOf="@+id/editTextProvince" />
+
+        <EditText
+            android:id="@+id/editTextProvince"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="@+id/editTextCountry"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCountry" />
+
+        <Button
+            android:id="@+id/buttonConfirmSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="onConfirm"
+            android:text="@string/buttonConfirmSettingsString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchAddress" />
+
+        <TextView
+            android:id="@+id/birthDateTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="@string/birthDateTitleString"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAddress" />
+
+        <EditText
+            android:id="@+id/editTextTextBirthDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/birthDateTitleTextView" />
+
+        <TextView
+            android:id="@+id/birthDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="@string/birthDateString"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTextBirthDate"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextBirthDate"
+            app:layout_constraintTop_toTopOf="@+id/editTextTextBirthDate" />
+
+        <Switch
+            android:id="@+id/switchAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/switchAddressText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextBirthDate" />
+
+        <Switch
+            android:id="@+id/switchDateOfBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="44dp"
+            android:text="@string/switchBDtext"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/switchAddress" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

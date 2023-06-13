@@ -1,0 +1,130 @@
+{
+  "Event": {
+    "threat_level_id": "1",
+    "info": "testevent-anomaly",
+    "published": false,
+    "analysis": "0",
+    "distribution": "0",
+    "Attribute": [
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-src",
+        "value": "10.20.30.40"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-src",
+        "value": "10.20.30.50"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-src",
+        "value": "10.20.30.23"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-src",
+        "value": "10.20.45.10"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-src",
+        "value": "10.20.45.8"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-dst",
+        "value": "198.204.318.291"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-dst",
+        "value": "198.204.318.241"
+      },
+      {
+        "type": "text",
+        "category": "Network activity",
+        "object_relation": "ip-dst",
+        "value": "198.204.318.241"
+      },
+      {
+        "type": "ip",
+        "category": "Network activity",
+        "object_relation": "ip-dst",
+        "value": "198.204.318.245"
+      },
+      {
+        "type": "port",
+        "category": "Network activity",
+        "object_relation": "ip-dst-port",
+        "value": "8080"
+      },
+      {
+        "type": "port",
+        "category": "Network activity",
+        "object_relation": "ip-dst-port",
+        "value": "80"
+      },
+      {
+        "type": "port",
+        "category": "Network activity",
+        "object_relation": "ip-dst-port",
+        "value": "8080"
+      },
+      {
+        "type": "datetime",
+        "category": "Other",
+        "object_relation": "creation_date",
+        "value": "2021-04-3"
+      }
+    ]
+  },
+  "Privacy-policy": {
+    "uuid": "283bf0c3-4427-1e18-a19b-14dfc4f89b50",
+    "attributes": [
+      {
+        "name": "ip-dst",
+        "type": "",
+        "pets": [
+          {
+            "scheme": "suppression",
+            "metadata": {
+              "level": 2
+            }
+          }
+        ]
+      }
+    ],
+    "creator": "juanfran",
+    "organization": "Universidad de Murcia",
+    "version": "1.0"
+  },
+  "Hierarchy-policy": {
+    "uuid": "283bf0c3-4427-4e18-a19b-14dfc4f89b70",
+    "hierarchy-description": "este fichero es para los eventos de tipo ejemplo del paper",
+    "hierarchy_attributes": [
+      {
+        "attribute-name": "ip-dst",
+        "attribute-type": "regex",
+        "attribute-generalization": [
+          {
+            "generalization": [],
+            "interval": [],
+            "regex": [
+              "\\.{1}[0-9]+$",
+              "\\.{1}[0-9]+\\.{1}[0-9]+$",
+              "\\.{1}[0-9]+\\.{1}[0-9]+\\.{1}[0-9]+$"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

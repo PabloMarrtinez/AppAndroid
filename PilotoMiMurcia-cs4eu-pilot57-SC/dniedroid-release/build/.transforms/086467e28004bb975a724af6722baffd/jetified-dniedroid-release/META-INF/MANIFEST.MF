@@ -1,0 +1,69 @@
+Manifest-Version: 1.0
+Created-By: 1.8.0_152-release (JetBrains s.r.o)
+
+Name: classes.jar
+SHA-256-Digest: D9Q2bZLoVZ+hBAIhXvkgVOKD4rua5xCwIh31fpzTCX0=
+
+Name: res/values/values.xml
+SHA-256-Digest: DCV72nuhQrpmBHWs8BI6M6WQtpbN4qzh7VbFjiPx3Nw=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: LoTfcQXsmSsAUJmjSVnjA+IFMs5pli+Czq0agt1tDac=
+
+Name: res/layout/lib_sslconnection_manager.xml
+SHA-256-Digest: jy7XQ60QW/Mc4kwxsQZKDwsOZyu0uXeoZCPIC5jpJPw=
+
+Name: res/drawable-hdpi-v4/dni30_peq.png
+SHA-256-Digest: ZHWVvYDr3Jo8J5ytT0+m7zBkPby7otql9BoEHcrYuaY=
+
+Name: res/drawable-hdpi-v4/alert_dialog_icon.png
+SHA-256-Digest: 9SjdfEqUCpgQaJEcf89LzWOQlTUVRjKP74M6jGXcG8g=
+
+Name: res/values-v11/values-v11.xml
+SHA-256-Digest: QZSear6KcpSTi/R4YT7CdLZrCubMeVStAeuNakQJJCI=
+
+Name: res/values-v14/values-v14.xml
+SHA-256-Digest: dgsPu0jC2n/C97vN3PIzpRAEDU8ljuglJtiHfPl3VhE=
+
+Name: res/drawable-hdpi-v4/checked_false.png
+SHA-256-Digest: F2iCo5E97GYHmcwREZvsaLaA0rEadXYJuWjJNhYVsVU=
+
+Name: res/layout/lib_password_entry.xml
+SHA-256-Digest: Ti4G58d1OFlOg34rPrA098MjBiSxWi296VmlZ22y4Ic=
+
+Name: R.txt
+SHA-256-Digest: dQe0LitLdaBvGffNSJKehKyiJgofMub+dj3kxsvf7j8=
+
+Name: res/layout/lib_nfc_communication.xml
+SHA-256-Digest: QCWV0QO0OnXA6AGXhQrj2OUjUc+Q8CO//bbnkEzQZoU=
+
+Name: res/drawable-hdpi-v4/dni30_grey_peq.png
+SHA-256-Digest: n40VBRXW02oLfDdOWCfQ+0SB9RIvQdJBZQ9Sij6oklM=
+
+Name: res/drawable-hdpi-v4/icon_volver.png
+SHA-256-Digest: CkNbzJHyL323XTa1Yb9gR3YNOVk9cabnv86ECPJ26Ms=
+
+Name: res/values-en/values-en.xml
+SHA-256-Digest: IZKiGfPWExdFb2Nz7QEuI0s8tVinSHr0zyTEVOar2JE=
+
+Name: res/drawable-hdpi-v4/warning_ico.png
+SHA-256-Digest: 34gzAlZ/XyU7W5gDXdfhaydyl9GNlrSBr8QX4JbBmlg=
+
+Name: res/layout/lib_auth_certificate_list.xml
+SHA-256-Digest: J5HFo4nXLB5dswU5nf1J3jsQt1nalMLD0dqkp1n8KAs=
+
+Name: res/anim/dnie30_grey.xml
+SHA-256-Digest: 1Ko9LcjEPxSWjO6Mh2dyesk1tpQ8qQATjXnFsDvRaGw=
+
+Name: res/drawable-hdpi-v4/grey_sec_conn_bg.png
+SHA-256-Digest: AhaEMKpqtwNMjCPT9XNfg+CaNk1d1gfnGCcdHWb4gLw=
+
+Name: res/drawable-hdpi-v4/key_icon.png
+SHA-256-Digest: SWXN6CZu6TgS/moaF9mpBiCFJArkPmk63lXWGxIifXg=
+
+Name: res/drawable-hdpi-v4/certificate.png
+SHA-256-Digest: E9MrKNdRthyyRzxgr4d4s5DrcoYFebpC9FxUBWGGTM4=
+
+Name: res/layout/lib_auth_certificate_selection.xml
+SHA-256-Digest: vTrbAUN0uVjo8Z9X29mKiZtDMZDcrCIjdjmlDe6Ep1k=
+

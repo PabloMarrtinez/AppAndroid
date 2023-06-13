@@ -1,0 +1,72 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: 4KB6IUwv9pskZmWkkrxQMj/4Zc6wa
+ skvFh9guEeWPnA=
+SHA-256-Digest-Manifest: 4MejGjUUFUyIm+vsy8FKGrkIOBE8FcLlTNvNzoyDlUw=
+Created-By: 1.8.0_152-release (JetBrains s.r.o)
+
+Name: classes.jar
+SHA-256-Digest: aM6sZwBxrupVo74aXs8QsPB4k6gFMTUNv0LOObun1SY=
+
+Name: res/values/values.xml
+SHA-256-Digest: 52ReOYCKKg7ur8ZfhYzPHJ5WH60Az6ucCvtFUveauL8=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: a36/98eGCDtGy9/89J89WSn2XxNXSAlfXsIsKVaSEBg=
+
+Name: res/layout/lib_sslconnection_manager.xml
+SHA-256-Digest: BbRj9WgeFqkWWylIctBtISvqEJ4uN0YbkNpTayMWpMo=
+
+Name: res/drawable-hdpi-v4/dni30_peq.png
+SHA-256-Digest: YVC8dNdlAhAb2UjPsoU7u8S/CZ1FVqjzzYPCeKQoefM=
+
+Name: res/drawable-hdpi-v4/alert_dialog_icon.png
+SHA-256-Digest: eXPEYQBho2zBZgbA7IK9c+a3/O1cC6lIf7hv/nNhveI=
+
+Name: res/values-v11/values-v11.xml
+SHA-256-Digest: 47ayneW3iODjw7jZnhlLAJH8JE32xY+N974PPPfWU68=
+
+Name: res/values-v14/values-v14.xml
+SHA-256-Digest: O5QqSBS1bL1gSzW6JR2aJR9TFFSXo6AiMKH/qCd5+5c=
+
+Name: res/drawable-hdpi-v4/checked_false.png
+SHA-256-Digest: QZ+Dc38tYyqqu3UOT6aZAbm4vGml7S9ovTzWZeHcXTQ=
+
+Name: res/layout/lib_password_entry.xml
+SHA-256-Digest: bvCRCKyTp5wMYxxq+YmVmsbeq3F1IvvfZZC1Y1fHh8I=
+
+Name: R.txt
+SHA-256-Digest: 9iTwkqUynnbQihYxbqgOIOsbKH2+PL9rwDZ0BKKjosU=
+
+Name: res/layout/lib_nfc_communication.xml
+SHA-256-Digest: qPWS5MsfT/kIWYCzepgVbYIVUjxi9hEhv8ihDl2vskg=
+
+Name: res/drawable-hdpi-v4/dni30_grey_peq.png
+SHA-256-Digest: MgxjWdGnYuuMW2NWuK9ddetADNYu2nUTOmpoWC8PHi0=
+
+Name: res/drawable-hdpi-v4/icon_volver.png
+SHA-256-Digest: 2JKrueZcKnm1Rew8bTTNq0HQsvBlZiGTQOb8SCjBadk=
+
+Name: res/values-en/values-en.xml
+SHA-256-Digest: 380XDNPttsb3AyFqeBEwfba4Y11GahonIcv60KOwIyQ=
+
+Name: res/drawable-hdpi-v4/warning_ico.png
+SHA-256-Digest: ugFnqwLJeYLRRXETGrGDz9lQxNEWeW8OduNbC4EWPv8=
+
+Name: res/layout/lib_auth_certificate_list.xml
+SHA-256-Digest: DX778xCEvOVZH2YzzbOiitCg11U33qzox9ARfevO7w8=
+
+Name: res/anim/dnie30_grey.xml
+SHA-256-Digest: 4Ktu2+UI13EVO6Es1Wp/za9X8LVq3xsCj8e4O0kjGA8=
+
+Name: res/drawable-hdpi-v4/grey_sec_conn_bg.png
+SHA-256-Digest: Eu1ilgI7JY5kG9aH4CxQk0jR1Es3HflKvY10AkeTN50=
+
+Name: res/drawable-hdpi-v4/key_icon.png
+SHA-256-Digest: OlyyIhVWZJ5ojTVIfK22HedBnhOJPufIDtKIRlTxXvc=
+
+Name: res/drawable-hdpi-v4/certificate.png
+SHA-256-Digest: e+ui0KWGbGkSfC/LoI3KACYsw/dV4sMgLK5KWAlxICE=
+
+Name: res/layout/lib_auth_certificate_selection.xml
+SHA-256-Digest: 2XtpOHh9AWglcP93SIyo+4LPwrJKsgzsdT4cmvbUfcU=
+

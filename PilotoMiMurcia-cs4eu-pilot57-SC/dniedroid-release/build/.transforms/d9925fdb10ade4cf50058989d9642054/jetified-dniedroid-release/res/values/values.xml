@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="trusted_hosts">
+        <item>B865130BEDCA38D27F69929420770BED86EFBC10</item> 
+        <item>2D3E48B5671DB00B6EFA4AFEEACC034E8122ACAC</item> 
+        <item>5A2825904ED1B1CC7DCA4F11658DED9A01902BD9</item> 
+        <item>82FD2A251ABB8824E6D70C2EEBC5FC32E12C915E</item> 
+        <item>1C5BFAA3DDE8C5A4A909D11037A50AEC0B4B21EC</item> 
+        <item>7320B5527AA9D4B026E80F9F7A92E8A4A4A72462</item> 
+        <item>909BFE5235E1A31E11EB4EA4F880092372ED08EB</item> 
+        <item>EC503507B215C4956219E2A89A5B42992C4C2C20</item> 
+        <item>B18D9D195669BA0F7829517566C25F422A277104</item> 
+        <item>1933061EA82851CEF85CB8C477A80FD7E0306353</item> 
+        <item>43F9B110D5BAFD48225231B0D0082B372FEF9A54</item> 
+        <item>FAC9AED02749B97B965552981FD245FB3AB0F428</item> 
+        <item>ADD7098DC02EBC03C543F7C81B7E027E21A11E63</item> 
+        <item>CA93BDA233F3A55E8D3F1C09F7C9E300B012ACFA</item> 
+        <item>E3296682A958B9D97610BB72DF62D38730A72CC8</item> 
+        <item>C772B48D2385E502E84737DBE787B64311911247</item> 
+        <item>5E7FEEF94C1FC5C6A234468C896B5DBACA059769</item> 
+        <item>808B72E43B574CF5877CB841A8DF88396D38AB94</item> 
+        <item>A005B6B723DF98E833F144DDEFCCEB5A539BA7B0</item> 
+        <item>04512330A904DC554DF408884C26BB83A1E39031</item> 
+        <item>009AB763AA06411C69FA3E5F3B820FA03B1C5F26</item> 
+        <item>DC2C11D3F7594D7C2CA6706D990FDD365D1FEBFC</item> 
+        <item>DE28F4A4FFE5B92FA3C503D1A349A7F9962A8212</item> 
+        <item>780A06F6E9B4061CAD0C6502710606EB535F1C26</item> 
+        <item>0FA9A742133D2D1884B6036EA6E0E6257798D875</item> 
+        <item>0EB546B98632881634A187DBE7DF5CC9D4912C95</item> 
+        <item>B38FECEC0B148AA686C3D00F01ECC8848E8085EB</item> 
+        <item>A34D2CC5324580A1766184C7A2173FD0F890ECD0</item> 
+        <item>2CEB22C6D2951CB4ED77923D021E38E83C946FEF</item> 
+        <item>70F91DB5C14603E513DECEC3F79FCE87FC3E2518</item> 
+        <item>6221C646636098C98864572CA3E4D4D98A3C1DBF</item> 
+        <item>FFB1EC193828D9E40625CC149D36711E26CA8450</item> 
+        <item>6BA5CF2FD95BD6498D8D9FE37D91C96787226277</item> 
+        <item>FE727A78EA0C0335CDDA9C2ED75FD4D46F35C2EF</item> 
+        <item>786A74AC76AB147F9C6A3050BA9EA87EFE9ACE3C</item> 
+        <item>0401A254CD46FF6FA7207DC64CBABB43310B121D</item> 
+        <item>039EEDB80BE7A03C6953893B20D2D9323A4C2AFD</item> 
+        <item>050E59442627E9578997C1EA7A122C9EF88C92A1</item> 
+        <item>4F8FBED166B4F38813E203C59EC334E1D68E99ED</item> 
+        <item>FEBDF6E37D1C6411F6C4D3E8A9B2BEF3DD4E7DA1</item> 
+    </array>
+    <string name="lib_app_name">DnieDroidFNMT</string>
+    <string name="lib_certificate_dialog_error_no_available_exception">Error en diálogo de certificado no disponible.</string>
+    <string name="lib_certificate_dialog_error_select_exception">Error en diálogo de listado de certificados disponibles.</string>
+    <string name="lib_certificate_dialog_no_available_description">No se han encontrado certificados en el contenedor de claves.</string>
+    <string name="lib_certificate_dialog_no_available_title">Certificados no disponibles</string>
+    <string name="lib_certificate_dialog_select">Seleccione el certificado:</string>
+    <string name="lib_dialog_cancel">Cancelar</string>
+    <string name="lib_dialog_ok">Aceptar</string>
+    <string name="lib_dni_password_error_pin_locked">Ha excedido el número de reintentos. El DNIe está bloqueado.</string>
+    <string name="lib_dni_password_msg">Introduzca PIN.</string>
+    <string name="lib_dni_password_msg_n_tries">Introduzca PIN. Quedan #NUMBER reintentos.</string>
+    <string name="lib_dni_password_msg_one_left">Introduzca PIN. Queda 1 reintento.</string>
+    <string name="lib_final_process">Iniciando proceso...</string>
+    <string name="lib_netcomm_downloading">Descargando datos...</string>
+    <string name="lib_netcomm_error">No se ha podido realizar la conexión.</string>
+    <string name="lib_netcomm_errorResult">La operación no ha devuelto ningún resultado.</string>
+    <string name="lib_netcomm_errorTry">Error en la conexión. Inténtelo de nuevo.</string>
+    <string name="lib_netcomm_secure">Estableciendo conexión segura</string>
+    <string name="lib_nfc_configuration">Configuración NFC</string>
+    <string name="lib_nfc_device_access">Accediendo al DNIe...</string>
+    <string name="lib_nfc_device_close">Aproxime DNIe al dispositivo</string>
+    <string name="lib_nfc_device_error">Ocurrió un error durante la lectura del DNIe.</string>
+    <string name="lib_nfc_device_error_canceled">La operación ha sido cancelada.</string>
+    <string name="lib_nfc_device_error_lost">Error de comunicación. Se ha perdido la conexión con el DNIe.</string>
+    <string name="lib_nfc_device_error_pace">Error al montar canal PACE. CAN incorrecto.</string>
+    <string name="lib_nfc_device_error_reading">Ocurrió un error durante la lectura de ficheros.</string>
+    <string name="lib_nfc_device_loading">Cargando certificados...</string>
+    <string name="lib_nfc_device_lost">Conexión perdida. Aproxime de nuevo el DNIe</string>
+    <string name="lib_nfc_disabled_warn">Su dispositivo tiene desactivado el NFC. Debe habilitarlo para poder continuar.</string>
+    <string name="lib_nfc_logo_desc">DNI electrónico</string>
+    <string name="lib_nfc_result_desc">Resultado operación</string>
+    <string name="lib_parse_errorFilter">No se ha aplicado ningún filtro al documento.</string>
+    <string name="lib_parse_errorNoItems">No se han encontrado items.</string>
+    <string name="lib_parse_errorTooItems">Más de un item encontrado.</string>
+    <string name="lib_process_msg_dni">Accediendo al DNIe</string>
+    <string name="lib_process_msg_read">Leyendo DNIe...</string>
+    <string name="lib_process_title">DNIe versión 3.0</string>
+    <string name="lib_psswd_dialog_error_auth_error">Error en diálogo de contraseña</string>
+    <string name="lib_psswd_dialog_error_auth_exception">Excepción en diálogo de contraseña</string>
+    <string name="lib_psswd_dialog_error_signature_canceled">Error en diálogo de confirmación</string>
+    <string name="lib_psswd_dialog_error_signature_confirm">Excepción en diálogo de confirmación</string>
+    <string name="lib_psswd_dialog_hide">Ocultar contraseña</string>
+    <string name="lib_psswd_dialog_short">Contraseña</string>
+    <string name="lib_psswd_dialog_show">Mostrar contraseña</string>
+    <string name="lib_psswd_dialog_signature_title">Proceso de firma con el DNI electrónico</string>
+    <string name="lib_psswd_dialog_title">Introduzca contraseña</string>
+    <string name="lib_result_fail_description">La operación no ha podido completarse correctamente</string>
+    <string name="lib_result_fail_title">Error en la operación</string>
+    <string name="lib_result_ok">Operación correcta</string>
+    <string name="lib_result_ok_description">La operación se ha completado correctamente</string>
+    <string name="lib_sign_process_done">Firma realizada, puede retirar el DNIe.\nContinuando con descarga de datos...</string>
+    <string name="lib_sign_process_init">Iniciando firma, no retire el DNIe del dispositivo NFC.</string>
+    <string name="lib_sign_process_start">Firmando los datos.</string>
+    <string name="lib_sign_process_update">Actualizando datos a firmar.</string>
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        
+    </style>
+</resources>
