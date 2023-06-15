@@ -10,5 +10,13 @@
         android:id="@+id/mainlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"/>
+        android:orientation="vertical"
+        tools:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/qrView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/checkbox_off_background" />
+    </LinearLayout>
 </FrameLayout>

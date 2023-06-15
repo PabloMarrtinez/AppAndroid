@@ -86,7 +86,7 @@ public class Main extends AppCompatActivity {
         Main.InitializeCallable callable = new Main.InitializeCallable(new UseCasePilotConfiguration(storage));
         completionService.submit(callable);
         try {
-            Future<Boolean> future = completionService.poll(2, TimeUnit.SECONDS);
+            Future<Boolean> future = completionService.poll(4, TimeUnit.SECONDS);
             if (future == null)
                 handleErrorInitialization();
             else
@@ -145,13 +145,18 @@ public class Main extends AppCompatActivity {
                     Log.d(TAG,"Successfully retrieved a credential: "+
                             ClientSingleton.getCredentialManager().checkStoredCredential());
                     Intent intent = new Intent(Main.this, Home.class);
-/*
+
                     PSCredential credential = storage.getCredential();
 
-                    Log.d(TAG, credential.toString());
+                    String publicKeyValue = "";
+                    String[] parts = credential.getAttributes().toString().split("publickey=");
+                    if (parts.length > 1) {
+                        publicKeyValue = parts[1];
+                    }
 
-
- */
+                    publicKeyValue = publicKeyValue.substring(0, publicKeyValue.length() - 1);
+                    Log.e(TAG,publicKeyValue);
+                    MySingleton.getInstance().setMyVariable2(publicKeyValue);
 
                     startActivity(intent);
                 }

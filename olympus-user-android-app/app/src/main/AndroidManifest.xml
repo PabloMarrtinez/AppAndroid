@@ -19,6 +19,7 @@
         <activity android:name=".UrlActivity" />
         <activity android:name=".Register" />
         <activity android:name=".Home"/>
+        <activity android:name=".Staff"></activity>
 
         <activity
             android:name=".LoginActivity"

@@ -18,11 +18,25 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.security.spec.PKCS8EncodedKeySpec;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
                                                                         /*
@@ -32,6 +46,8 @@ import java.util.Scanner;
 
 import eu.olympus.cfp.model.TestIdentityProof;
 import eu.olympus.model.Attribute;
+import eu.olympus.model.Operation;
+import eu.olympus.model.Predicate;
 import eu.olympus.server.rest.*;
 
 import eu.olympus.model.Policy;
@@ -40,20 +56,20 @@ import eu.olympus.credentialapp.rest2.APIUtils;
 import eu.olympus.credentialapp.rest2.CapManAPIService;
 import eu.olympus.credentialapp.utils.AsyncOperations;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import shaded.org.bouncycastle.util.test.Test;
+
+
+
 
 public class Register extends AppCompatActivity {
 
     private static final String TAG = Register.class.getSimpleName();
-    private EditText username, password, publickey, birthday;
+    private EditText username, password, publickey, birthday, privateKey;
     private TextView check;
     private Button confirmButton;
     private TextView notMatchText, failRegister;
     private ProgressBar loadingBar;
     private boolean isLoading;
+    address a = new address();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +78,7 @@ public class Register extends AppCompatActivity {
         username = findViewById(R.id.UsernameRegister);
         password = findViewById(R.id.PasswdRegister);
         publickey = findViewById(R.id.publicKey);
+        privateKey = findViewById(R.id.privateKey);
         birthday = findViewById(R.id.birthday);
         check = findViewById(R.id.check);
         check.setVisibility(View.INVISIBLE);
@@ -93,28 +110,63 @@ public class Register extends AppCompatActivity {
 
     }
 
+    public void checkKey(String publicK, String privateK) {
 
-    public void onRegister(View v) {
+        String url = "http:/"+a.getAddress()+":4000/checkPrivateKey?publicKey=" + publicK + "&private=" + privateK;
+        Log.d(TAG, url);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            Log.e(TAG, response);
+                            boolean isMatchingPrivateKey = Boolean.parseBoolean(response);
+                            if (isMatchingPrivateKey) {
+                                regist();
+                            }
+                            else{
+                                check.setVisibility(View.VISIBLE);
+                                check.setText("public and private key don't match");
+                            }
+                        } catch (Exception e) {
+                            Log.e(TAG, "Error al procesar la respuesta: " + e.getMessage());
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e(TAG, "Error en la solicitud: " + error.toString());
+                    }
+                });
+
+        RequestQueue requestQueue = Volley.newRequestQueue(Register.this);
+        requestQueue.add(stringRequest);
+    }
 
 
-
-        //failRegister.setVisibility(View.INVISIBLE);
-
+    public void regist(){
         Log.d(TAG, "Start registering in OLYMPUS");
         String usernameText = username.getText().toString().trim();
         String passwordText = password.getText().toString().trim();
         String publicKeyText = publickey.getText().toString().trim();
         String birthdayText = birthday.getText().toString().trim();
+        String privateKeyText = privateKey.getText().toString().trim();
+
+
 
         if (usernameText.equals("") || passwordText.equals("") || publicKeyText.equals("") || birthdayText.equals("")){
             check.setVisibility(View.VISIBLE);
-        }
-        else{
+            check.setText("Complete all the fields");
+        } else{
+
+
+
             check.setVisibility(View.INVISIBLE);
             TestIdentityProof testProof = new TestIdentityProof();
             testProof.setAttributes(new HashMap<>());
-            testProof.getAttributes().put("publicKey",  new Attribute(publicKeyText));
-            testProof.getAttributes().put("birthday",  new Attribute(birthdayText));
+            testProof.getAttributes().put("https://olympus-project.eu/example/model/publicKey",  new Attribute(publicKeyText));
+            testProof.getAttributes().put("https://olympus-project.eu/example/model/birthday",  new Attribute(birthdayText));
             AsyncOperations async = new AsyncOperations() {
 
                 @Override
@@ -165,8 +217,35 @@ public class Register extends AppCompatActivity {
         }
 
     }
+    public void onRegister(View v) {
 
 
+        String publicKeyText = publickey.getText().toString().trim();
+
+        String privateKeyText = privateKey.getText().toString().trim();
+
+        String usernameText = username.getText().toString().trim();
+        String passwordText = password.getText().toString().trim();
+
+        String birthdayText = birthday.getText().toString().trim();
+
+
+        if (publicKeyText.equals("") || privateKeyText.equals("") || usernameText.equals("") || passwordText.equals("") || publicKeyText.equals("") || birthdayText.equals("")){
+            check.setVisibility(View.VISIBLE);
+            check.setText("Complete all the fields");
+        } else{
+            checkKey(publicKeyText,privateKeyText);
+
+        }
+
+    }
+
+    public void changeBack(View v){
+
+        Intent  i = new Intent(this, Main.class);
+        startActivity(i);
+
+    }
 
 
 }

@@ -133,8 +133,8 @@ public class Ticket extends Fragment {
     }
 
     public void consutarEntradas(View rootView, String address){
-        //String url = "http:/"+a.getAddress()+":4000/ConsultarTickets?direccion=" + address;
-        String url = "http:/"+a.getAddress()+":4000/ConsultarTicketsPrueba";
+        String url = "http:/"+a.getAddress()+":4000/ConsultarTickets?direccion=" + address;
+        //String url = "http:/"+a.getAddress()+":4000/ConsultarTicketsPrueba";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -216,7 +216,7 @@ public class Ticket extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_ticket, container, false);
-        String address = "0xA9E38736227E96CE380B5061949f8c61D2015c5d";
+        String address = MySingleton.getInstance().getPublicKey();
         consutarEntradas(rootView, address);
         return rootView;
     }

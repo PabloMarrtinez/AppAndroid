@@ -35,15 +35,30 @@ import java.util.LinkedList;
 import java.util.List;
 
 import eu.olympus.cfp.model.TestIdentityProof;
+import eu.olympus.client.interfaces.CredentialStorage;
 import eu.olympus.credentialapp.olympus.ClientSingleton;
+import eu.olympus.credentialapp.olympus.EncryptedCredentialStorage;
 import eu.olympus.credentialapp.utils.AsyncOperations;
 import eu.olympus.model.Attribute;
 import eu.olympus.model.Operation;
+import eu.olympus.model.PSCredential;
 import eu.olympus.model.Policy;
 import eu.olympus.model.Predicate;
 
-import eu.olympus.credentialapp.address;
-import eu.olympus.credentialapp.MySingleton;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+
+
 public class Events extends Fragment {
     address a = new address();
     private static final String TAG = Events.class.getSimpleName();
@@ -52,6 +67,10 @@ public class Events extends Fragment {
 
     private String mParam1;
     private String mParam2;
+
+    Qr f3 = new Qr();
+    private ImageView qrCodeImageView;
+
 
     public Events() {
         // Required empty public constructor
@@ -74,11 +93,18 @@ public class Events extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+    }
+
+    public void eliminarEventos(){
+
     }
 
     public void createLayout(View rootView, String name, String fecha) {
         LinearLayout mainLayout = rootView.findViewById(R.id.mainlayout);
-
+        qrCodeImageView = rootView.findViewById(R.id.qrView);
+        qrCodeImageView.setVisibility(View.INVISIBLE);
         TextView textView2 = new TextView(getActivity());
         textView2.setLayoutParams(new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -243,6 +269,40 @@ public class Events extends Fragment {
                     Log.d(TAG,"Successfully retrieved a credential: "+
                             ClientSingleton.getCredentialManager().checkStoredCredential());
 
+                    EncryptedCredentialStorage storage = new EncryptedCredentialStorage("credentialStorage",getActivity().getApplicationContext());
+
+                    PSCredential credential = storage.getCredential();
+
+                    Log.d(TAG, credential.getAttributes().toString());
+                    String textToEncode = credential.getAttributes().toString();
+                    Log.e(TAG,textToEncode);
+
+                    try {
+                        Bitmap qrCodeBitmap = generateQRCode(textToEncode);
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                ViewGroup.LayoutParams layoutParams = qrCodeImageView.getLayoutParams();
+
+                                // Establece el nuevo ancho y alto deseados
+                                int newWidth = 800;  // Cambia este valor según tus necesidades
+                                int newHeight = 800;  // Cambia este valor según tus necesidades
+                                layoutParams.width = newWidth;
+                                layoutParams.height = newHeight;
+                                // Aplica los nuevos parámetros de diseño a la vista
+                                qrCodeImageView.setVisibility(View.VISIBLE);
+                                qrCodeImageView.setLayoutParams(layoutParams);
+
+                                qrCodeImageView.setImageBitmap(qrCodeBitmap);
+
+                            }
+                        });
+                    } catch (WriterException e) {
+                        e.printStackTrace();
+                    }
+
+
+
                 }
             }
         };
@@ -255,9 +315,34 @@ public class Events extends Fragment {
         async.doAsyncLogin(user,pass,p);
     }
 
+    private Bitmap generateQRCode(String text) throws WriterException {
+        BitMatrix bitMatrix;
+        try {
+            bitMatrix = new MultiFormatWriter().encode(text, BarcodeFormat.QR_CODE, 300, 300);
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
+
+        int width = bitMatrix.getWidth();
+        int height = bitMatrix.getHeight();
+
+        int[] pixels = new int[width * height];
+
+        for (int y = 0; y < height; y++) {
+            int offset = y * width;
+            for (int x = 0; x < width; x++) {
+                pixels[offset + x] = bitMatrix.get(x, y) ? Color.BLACK : Color.WHITE;
+            }
+        }
+
+        Bitmap qrCodeBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        qrCodeBitmap.setPixels(pixels, 0, width, 0, 0, width, height);
+
+        return qrCodeBitmap;
+    }
 
     public void consutarEventos(View rootView){
-        String url =  "http:/"+a.getAddress()+":4000/ConsultarEventosPrueba";
+        String url =  "http:/"+a.getAddress()+":4000/ConsultarEventos";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
@@ -294,4 +379,5 @@ public class Events extends Fragment {
 
 
     }
+
 }

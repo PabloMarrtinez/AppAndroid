@@ -21,7 +21,7 @@ public class EncryptedCredentialStorage implements CredentialStorage {
 
     @Override
     public void storeCredential(PSCredential psCredential) {
-        byte[] content=psCredential.toString().getBytes();
+        byte[] content=psCredential.getEncoded().getBytes();
         //Log.d("EncryptedStorage","Store "+psCredential.toString());
         Utils.writeEncrypted(filename,content,context);
     }
@@ -53,7 +53,7 @@ public class EncryptedCredentialStorage implements CredentialStorage {
             }
             return true;
         } catch (Exception e) {
-            Log.d("EncryptedStorage","No credential");
+            Log.d("EncryptedStorage","No credential ");
         }
         return false;
     }
@@ -77,7 +77,7 @@ public class EncryptedCredentialStorage implements CredentialStorage {
     public void storeRevocationCredential(PSCredential psCredential) {
 
         String revocationFilename = filename + "_revocation";
-        byte[] content = psCredential.toString().getBytes();
+        byte[] content = psCredential.getEncoded().getBytes();
         Utils.writeEncrypted(revocationFilename, content, context);
 
 

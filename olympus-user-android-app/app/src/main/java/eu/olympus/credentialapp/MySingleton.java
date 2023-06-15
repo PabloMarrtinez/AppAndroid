@@ -5,6 +5,8 @@ public class MySingleton {
     private String user;
     private String pass;
 
+    private String publicKey;
+
     private MySingleton() {
         // Constructor privado para evitar la creación de múltiples instancias
     }
@@ -24,6 +26,13 @@ public class MySingleton {
         return pass;
     }
 
+    public String getPublicKey(){
+        return publicKey;
+    }
+
+    public void setMyVariable2(String value1) {
+        publicKey = value1;
+    }
     public void setMyVariable(String value1, String value2) {
         user = value1;
         pass = value2;

@@ -173,7 +173,7 @@ public class SignUp extends AppCompatActivity {
                             JsonObject resp=response.body().getAsJsonObject();
                             String uid=resp.get("uid").getAsString();
                             String signature=resp.get("signature").getAsString();
-                            MiMurciaUserIdIdentityProof proof=new MiMurciaUserIdIdentityProof(signature,uid);
+                            MiMurciaUserIdIdentityProof     proof=new MiMurciaUserIdIdentityProof(signature,uid);
                             doAsyncIdentityProof(username.getText().toString().trim(), password.getText().toString().trim(),proof);
                         }
 
